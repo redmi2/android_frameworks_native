@@ -467,6 +467,7 @@ private:
     void logFrameStats();
 
     void dumpStaticScreenStats(String8& result) const;
+    virtual void dumpDrawCycle(bool /* prePrepare */ ) { }
 
     /* ------------------------------------------------------------------------
      * Attributes
@@ -493,6 +494,7 @@ private:
     RenderEngine* mRenderEngine;
     nsecs_t mBootTime;
     bool mGpuToCpuSupported;
+    bool mDropMissedFrames;
     sp<EventThread> mEventThread;
     sp<EventThread> mSFEventThread;
     sp<EventControlThread> mEventControlThread;
