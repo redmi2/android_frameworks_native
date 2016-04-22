@@ -13,6 +13,7 @@ LOCAL_SRC_FILES := \
     FrameTracker.cpp \
     Layer.cpp \
     LayerDim.cpp \
+    LayerBlur.cpp \
     MessageQueue.cpp \
     MonitoredProducer.cpp \
     SurfaceFlinger.cpp \
@@ -120,6 +121,12 @@ ifeq ($(TARGET_USES_QCOM_BSP), true)
     LOCAL_C_INCLUDES += hardware/qcom/display/libqdutils
     LOCAL_SHARED_LIBRARIES += libqdutils
     LOCAL_CFLAGS += -DQTI_BSP
+endif
+
+ifeq ($(TARGET_HAVE_UI_BLUR),true)
+    LOCAL_C_INCLUDES += $(TARGET_OUT_HEADERS)/ui
+    LOCAL_SHARED_LIBRARIES += libuiblur
+    LOCAL_CFLAGS += -DUI_BLUR
 endif
 
 LOCAL_MODULE := libsurfaceflinger
