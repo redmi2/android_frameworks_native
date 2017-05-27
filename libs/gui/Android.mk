@@ -56,6 +56,7 @@ LOCAL_SRC_FILES := \
 	DisplayEventReceiver.cpp \
 	GLConsumer.cpp \
 	GraphicBufferAlloc.cpp \
+	GraphicsEnv.cpp \
 	GuiConfig.cpp \
 	IDisplayEventConnection.cpp \
 	IGraphicBufferAlloc.cpp \
@@ -77,6 +78,7 @@ LOCAL_SRC_FILES := \
 	SyncFeatures.cpp \
 
 LOCAL_SHARED_LIBRARIES := \
+ 	libnativeloader \
 	libbinder \
 	libcutils \
 	libEGL \
